@@ -1,0 +1,21 @@
+{
+  "name": "devbadge-giver",
+  "version": "1.0.0",
+  "description": "A way to claim Active Developer badge without coding",
+  "main": "index.js",
+  "scripts": {
+    "test": "node ."
+  },
+  "keywords": [
+    "Active Developer Badge",
+    "Claim Active Developer Badge",
+    "Active Developer Badge Giver"
+  ],
+  "author": "ItzKeyCode @ 2023 Q4",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1",
+    "readline": "^1.3.0"
+  }
+}
