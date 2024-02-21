@@ -192,6 +192,7 @@ client.on('interactionCreate', async interaction => {
 
     try {
         if (commandName === 'status') {
+            const apiPing = client.ws.ping;
             const botPing = Date.now() - interaction.createdTimestamp;
 
             const days = Math.floor(client.uptime / 86400000);
