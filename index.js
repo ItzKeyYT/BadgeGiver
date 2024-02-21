@@ -100,9 +100,10 @@ if (!process.env.Bot_Token) {
             console.log(`🔗 | Go to https://discord.com/developers/applications.`);
             console.log(`👆 | Click on the application that you've just created.`);
             console.log(`🔃 | Copy Application ID.`);
-            console.log("🔃 | Paste this link down below in your browser, then replace {clientId} with the Application ID that you've copied.");
+            console.log("🔃 | Paste this link down below in your browser, then replace {clientId} with the Application ID that you've copied. (We're now inviting your bot into your server.)");
             console.log("🔗 | https://discord.com/oauth2/authorize?client_id={clientId}&scope=bot&permissions=applications.commands");
             console.log(`-----`);
+            console.log('💻 | After inviting the bot to your server, type "/get-badge" to finally get your badge!')
         });
         
     });
@@ -165,13 +166,14 @@ if (!process.env.Bot_Token) {
         console.log(`☑ | ${client.user.tag} is logged in using .env file token that was provided and it's ready to be used!`);
 
         // Tips for copying a bot application id
-        console.log(`-----`);
-        console.log(`🔗 | Now go to https://discord.com/developers/applications.`);
-        console.log(`👆 | Click on the application that you've created.`);
-        console.log(`🔃 | Copy Application ID`);
-        console.log("🔃 | Paste this link down below in your browser, then replace {clientId} with the Application ID that you've copied.");
+        cconsole.log(`------`);
+        console.log(`🔗 | Go to https://discord.com/developers/applications.`);
+        console.log(`👆 | Click on the application that you've just created.`);
+        console.log(`🔃 | Copy Application ID.`);
+        console.log("🔃 | Paste this link down below in your browser, then replace {clientId} with the Application ID that you've copied. (We're now inviting your bot into your server.)");
         console.log("🔗 | https://discord.com/oauth2/authorize?client_id={clientId}&scope=bot&permissions=applications.commands");
         console.log(`-----`);
+        console.log('💻 | After inviting the bot to your server, type "/get-badge" to finally get your badge!')
     });
 
 };
@@ -183,7 +185,7 @@ client.on('interactionCreate', async interaction => {
     
     try {
         if (commandName === 'get-badge') {
-            await interaction.reply('**☑ | You should now be able to get the Active Developer Badge!\nIf you need help, please look at this article:\nhttps://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge**');
+            await interaction.reply('**☑ | You should now be able to get the Active Developer Badge!\nIf you need help, please look at this article by Discord:\nhttps://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge**');
         };
     } catch (error) {
         console.log('☒ | An error occurred:', error);
