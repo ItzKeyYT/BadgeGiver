@@ -1,0 +1,54 @@
+name: Auto Release on File Changes
+
+on:
+  push:
+    paths:
+      - 'index.js'
+      - 'package.json'
+      - 'package-lock.json'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Get version from package.json
+      id: get_version
+      run: echo "::set-output name=version::$(node -p "require('./package.json').version")"
+
+    - name: Zip changed files
+      run: |
+        zip -r release-${{ steps.get_version.outputs.version }}.zip index.js package.json package-lock.json
+
+    - name: Create release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.get_version.outputs.version }}
+        release_name: Release ${{ steps.get_version.outputs.version }}
+        body: |
+          Changes in:
+          - index.js
+          - package.json
+          - package-lock.json
+        draft: false
+        prerelease: false
+
+    - name: Upload release assets
+      id: upload-release-asset
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./release-${{ steps.get_version.outputs.version }}.zip
+        asset_name: release-${{ steps.get_version.outputs.version }}.zip
+        asset_content_type: application/zip
