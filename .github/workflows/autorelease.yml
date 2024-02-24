@@ -28,7 +28,7 @@ jobs:
         zip -r update-v${{ env.VERSION }}.zip index.js package.json package-lock.json
 
     - name: Release
-      uses: softprops/action-gh-release@v1
+      uses: softprops/action-gh-release@v0.1.15
       with:
         files: |
           update-v${{ env.VERSION }}.zip

@@ -1,6 +1,6 @@
 {
   "name": "badgegiver",
-  "version": "1.2.4",
+  "version": "1.2.4.1",
   "description": "A way to claim the Active Developer badge on Discord without coding",
   "main": "index.js",
   "scripts": {
