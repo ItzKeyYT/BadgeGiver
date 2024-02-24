@@ -1,6 +1,6 @@
-# DevBadgeGiver
+# BadgeGiver
 
-DevBadgeGiver is a personal project and a simple tool managed by [ItzKeyCode](https://github.com/ItzKeyYT). It is designed to help Discord users obtain the Active Developer Badge without the need for coding or technical knowledge. This project uses JavaScript and aims to provide an easy and accessible way for users to acquire the Active Developer Badge within the Discord platform.
+BadgeGiver is a personal project and a simple tool managed by [ItzKeyCode](https://github.com/ItzKeyYT). It is designed to help Discord users obtain the Active Developer Badge without the need for coding or technical knowledge. This project uses JavaScript and aims to provide an easy and accessible way for users to acquire the Active Developer Badge within the Discord platform.
 
 ## Active Developer Badge
 
