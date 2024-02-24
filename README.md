@@ -45,5 +45,5 @@ If you encounter any issues or have questions about using BadgeGiver, feel free 
 
 ## License
 
-DevBadgeGiver is not affiliated with [Discord](https://discord.com) or its parent company. This project is provided as-is without any warranties. Use at your own discretion.
+BadgeGiver is not affiliated with [Discord](https://discord.com) or its parent company. This project is provided as-is without any warranties. Use at your own discretion.
 
