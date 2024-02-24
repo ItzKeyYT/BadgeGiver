@@ -14,11 +14,11 @@ The Active Developer Badge on Discord is a mark of recognition specifically tail
 
 ## Getting Started
 
-To start using DevBadgeGiver and obtain the Active Developer Badge on Discord, follow these simple steps:
+To start using BadgeGiver and obtain the Active Developer Badge on Discord, follow these simple steps:
 
 1. **Download node.js:** In order to run the code, you must download [node.js](https://nodejs.org/en/download/) on to your computer.
 
-2. **Visit and download the latest releases:** Navigate to the [latest releases](https://github.com/ItzKeyHeyHeymanCode/DevBadgeGiver/releases/latest) on [GitHub](https://github.com) and download it.
+2. **Visit and download the latest releases:** Navigate to the [latest releases](https://github.com/ItzKeyHeyHeymanCode/BadgeGiver/releases/latest) on [GitHub](https://github.com) and download it.
 
 3. **Extract the files:** Once you have downloaded the file, navigate to the folder where you downloaded the file and use a software like [WinRAR](https://www.rarlab.com/download.htm) or [7-Zip](https://7-zip.org/download.html) to extract the files.
 
@@ -30,18 +30,18 @@ To start using DevBadgeGiver and obtain the Active Developer Badge on Discord, f
 
 ## Frequently Asked Questions (FAQs)
 
-- **Is DevBadgeGiver safe to use?**
-  - Yes, DevBadgeGiver is open-source and we don't don't steal informations about you or your devices.
+- **Is BadgeGiver safe to use?**
+  - Yes, BadgeGiver is open-source and we don't don't steal informations about you or your devices.
 
-- **Is there any cost associated with using DevBadgeGiver?**
-  - No, DevBadgeGiver is completely free to use. There are no hidden costs or subscriptions required.
+- **Is there any cost associated with using BadgeGiver?**
+  - No, BadgeGiver is completely free to use. There are no hidden costs or subscriptions required.
 
 - **How long does it take to receive the Active Developer Badge?**
   - The time to receive the badge may vary depending on verification processes at the Discord end. However, the badge acquisition process is designed to be quick and efficient.
 
 ## Support
 
-If you encounter any issues or have questions about using DevBadgeGiver, feel free to report the issue to us on GitHub or contact us at [support@itzkeyyt.us.to](mailto:support@itzkeyyt.us.to). Note: We'll respond you with a different email.
+If you encounter any issues or have questions about using BadgeGiver, feel free to report the issue to us on GitHub or contact us at [support@itzkeyyt.us.to](mailto:support@itzkeyyt.us.to). Note: We'll respond you with a different email.
 
 ## License
 
