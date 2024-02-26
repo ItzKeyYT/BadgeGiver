@@ -25,19 +25,22 @@ jobs:
 
     - name: Zip changed files
       run: |
-        zip -r update-v${{ env.VERSION }}.zip index.js package.json package-lock.json
+        zip -r update-v${{ steps.get_version.outputs.VERSION }}.zip index.js package.json package-lock.json
 
     - name: Release
       uses: softprops/action-gh-release@v0.1.15
       with:
         files: |
-          update-v${{ env.VERSION }}.zip
-        tag_name: ${{ env.VERSION }}
-        release_name: Update v${{ env.VERSION }}
+          update-v${{ steps.get_version.outputs.VERSION }}.zip
+        tag_name: v${{ steps.get_version.outputs.VERSION }}
+        name: Update v${{ steps.get_version.outputs.VERSION }}
         body: |
           Changes in:
           - index.js
           - package.json
           - package-lock.json
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
+    
+    permissions:
+      contents: write
+      discussions: write
