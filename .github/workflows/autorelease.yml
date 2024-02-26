@@ -21,19 +21,27 @@ jobs:
     - name: Get version from package.json
       id: get_version
       run: |
-        echo "VERSION=$(node -p 'require(\"./package.json\").version')" >> $GITHUB_ENV
+        echo "Getting version..."
+        "VERSION=$(node -p 'require(\"./package.json\").version')"
+        echo "Got version $VERSION"
+        echo "VERSION=$VERSION" >> $GITHUB_ENV
+
+
+    # Print the value of VERSION for debugging
+    - name: Print VERSION
+      run: echo "VERSION=${{ env.VERSION }}"
 
     - name: Zip changed files
       run: |
-        zip -r update-v${{ steps.get_version.outputs.VERSION }}.zip index.js package.json package-lock.json
+        zip -r update-v${{ env.VERSION }}.zip index.js package.json package-lock.json
 
     - name: Release
       uses: softprops/action-gh-release@v0.1.15
       with:
         files: |
-          update-v${{ steps.get_version.outputs.VERSION }}.zip
-        tag_name: v${{ steps.get_version.outputs.VERSION }}
-        name: Update v${{ steps.get_version.outputs.VERSION }}
+          BadgeGiver-v${{ env.VERSION }}.zip
+        tag_name: v${{ env.VERSION }}
+        name: Update v${{ env.VERSION }}
         body: |
           Changes in:
           - index.js
