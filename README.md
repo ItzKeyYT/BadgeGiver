@@ -9,24 +9,30 @@ The Active Developer Badge on Discord is a mark of recognition specifically tail
 ## Features
 
 - **Easy Badge Acquisition:** Obtain the Active Developer Badge on Discord effortlessly without any coding or technical skills required.
-- **No Coding Required:** Eliminates the need for users to write code or perform complex configurations to obtain the badge.
+- **No Coding Required:** Eliminates the need for users to write code to obtain the badge.
 - **Free of Charge:** Access the Active Developer Badge for free without any hidden costs or subscriptions.
 
 ## Getting Started
 
 To start using BadgeGiver and obtain the Active Developer Badge on Discord, follow these simple steps:
 
-1. **Download node.js:** In order to run the code, you must download [node.js](https://nodejs.org/en/download/) on to your computer.
+1. **Enable Discord Data Usage:** Ensure that the 'Use data to improve Discord' toggle is switched on in your Discord settings under Privacy & Safety, and confirm that you currently do not possess the Active Developer Badge. (You need to wait for a day before you can run the script if you have the toggle off)
 
-2. **Visit and download the latest releases:** Navigate to the [latest releases](https://github.com/ItzKeyHeyHeymanCode/BadgeGiver/releases/latest) on [GitHub](https://github.com) and download it.
+2. **Download node.js:** In order to run the script, you must download [node.js](https://nodejs.org/en/download/) on to your computer.
 
-3. **Extract the files:** Once you have downloaded the file, navigate to the folder where you downloaded the file and use a software like [WinRAR](https://www.rarlab.com/download.htm) or [7-Zip](https://7-zip.org/download.html) to extract the files.
+3. **Visit and download the latest releases:** Navigate to the [latest releases](https://github.com/ItzKeyYT/BadgeGiver/releases/latest) on [GitHub](https://github.com) and download it.
 
-4. **Prepare to run the Code via Command Promt:** Open the folder where the files has been extracted, click the area that shows your file locations and type "cmd" into it. after cmd is open, type "npm i" to install every required packages.
+4. **Extract the files:** Once you have downloaded the file, navigate to the folder where you downloaded the file and extract the files.
 
-5. **Run the Code and follow the instructions:** After installing required packages, now run the command by typing "node ." or "npm run bot", then follow the console what it says to do.
+5. **[Windows Only] Run the script:** Open the folder where the files has been extracted, click "start_windows.bat".
 
-6. **Receive Your Badge:** Once you've completed the necessary steps, you'll should receive the Active Developer Badge on Discord!
+5.1. **[Linux & Mac] Run the script:** Open the folder where the files has been extracted, click "start_linux.sh".
+
+6. **Follow the instructions:** Soon after running the script, it'll install required packages and run the script itself. Now follow the console's instructions.
+
+7. **Wait for your badge:** After you followed everything what the console says to do, you'll now wait. (Normally you need to wait for a day.)
+
+8. **Receive Your Badge:** Once you've completed the necessary steps, you'll should receive the Active Developer Badge on Discord!
 
 ## Frequently Asked Questions (FAQs)
 
@@ -37,7 +43,7 @@ To start using BadgeGiver and obtain the Active Developer Badge on Discord, foll
   - No, BadgeGiver is completely free to use. There are no hidden costs or subscriptions required.
 
 - **How long does it take to receive the Active Developer Badge?**
-  - The time to receive the badge may vary depending on verification processes at the Discord end. However, the badge acquisition process is designed to be quick and efficient.
+  - It normally takes a day. You will need fill out the 'form' to receive the Active Developer Badge. However, the badge acquisition process is designed to be quick and efficient.
 
 ## Support
 
