@@ -28,25 +28,59 @@ console.log(`After that, click "Reset Token" (You might need to type a 6 number 
 console.log(`Copy the token and paste it down below in the console.`);
 console.log(`-----`);
     
-// Ask the user to input the Discord bot token
-tokenInterface.question('Please enter your Discord bot token: ', (input_token) => {
-    // Close the interface
-    tokenInterface.close();
-        
-    console.clear();
-        
-    // Try to login with the user's input and catch any errors
-    client.login(input_token).catch(error => { // Login with the user's input and try to catch any errors
-        console.log('An error occurred:\n', error); // Error Code
-        if (error.code && error.code === 'TokenInvalid') { // Check if the error code is TokenInvalid
-            console.log(`An error occurred: The discord bot token you've provided is not valid.`); // Send a dedicated error code message
-            console.log(`Please try to run the code again and enter a valid token. Usage: "node ." or "npm run bot"`); // Message to instruct the user to try again with a valid token
-        } else {
-            console.log(error);
-            console.log(`An error occurred: I don't recognise this error code, please copy the error code at the top and report the issue to the creator on GitHub.`); // Error code message for other error codes that was not "TokenInvalid"
-        };
+// Function to get token input and attempt login again
+function getTokenAndLoginAgain() {
+    tokenInterface.question('Please enter your valid Discord bot token: ', (input_token) => {
+        console.clear();
+        // Attempt login with the provided token
+        client.login(input_token)
+            .then(() => {
+                tokenInterface.close(); // Close readline interface upon successful login
+                // Proceed with your application logic here
+            })
+            .catch(error => {
+                // console.log('An error occurred:\n', error);
+                if (error.code && error.code === 'TokenInvalid') {
+                    console.log(`The Discord bot token you've provided is not valid.`);
+                    // Prompt the user for token input again
+                    getTokenAndLoginAgain();
+                } else {
+                    console.log(`An unknown error occurred. Please check your token and try again.`);
+                    // Prompt the user for token input again
+                    getTokenAndLoginAgain();
+                }
+            });
     });
-    
+};
+
+// Function to get token input and attempt login
+function getTokenAndLogin() {
+    tokenInterface.question('Please enter your Discord bot token: ', (input_token) => {
+        console.clear();
+        // Attempt login with the provided token
+        client.login(input_token)
+            .then(() => {
+                tokenInterface.close(); // Close readline interface upon successful login
+                // Proceed with your application logic here
+            })
+            .catch(error => {
+                // console.log('An error occurred:\n', error);
+                if (error.code && error.code === 'TokenInvalid') {
+                    console.log(`The Discord bot token you've provided is not valid.`);
+                    // Prompt the user for token input again
+                    getTokenAndLoginAgain();
+                } else {
+                    console.log(`An unknown error occurred. Please check your token and try again.`);
+                    // Prompt the user for token input again
+                    getTokenAndLoginAgain();
+                }
+            });
+    });
+};
+
+// Start the token input and login process
+getTokenAndLogin();
+
     client.once('ready', async () => {
         console.log("d8888b.  .d8b.  d8888b.  d888b  d88888b  d888b  d888888b db    db d88888b d8888b.\n88  `8D d8' `8b 88  `8D 88' Y8b 88'     88' Y8b   `88'   88    88 88'     88  `8D\n88oooY' 88ooo88 88   88 88      88ooooo 88         88    Y8    8P 88ooooo 88oobY'\n88~~~b. 88~~~88 88   88 88  ooo 88~~~~~ 88  ooo    88    `8b  d8' 88~~~~~ 88`8b\n88   8D 88   88 88  .8D 88. ~8~ 88.     88. ~8~   .88.    `8bd8'  88.     88 `88.\nY8888P' YP   YP Y8888D'  Y888P  Y88888P  Y888P  Y888888P    YP    Y88888P 88   YD\n");
         try {
@@ -103,8 +137,6 @@ tokenInterface.question('Please enter your Discord bot token: ', (input_token) =
         console.log(`-----`);
         console.log(`WARNING: Do not close the window before you run the "/get-badge" command!`);
     });
-        
-});
     
 
 client.on('interactionCreate', async interaction => {
