@@ -22,7 +22,7 @@ jobs:
       id: get_version
       run: |
         echo "Getting version..."
-        "VERSION=$(node -p 'require(\"./package.json\").version')"
+        "VERSION=$(node -p 'require("./package.json").version')"
         echo "Got version $VERSION"
         echo "VERSION=$VERSION" >> $GITHUB_ENV
 

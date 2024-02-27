@@ -28,7 +28,7 @@ console.log(`After that, click "Reset Token" (You might need to type a 6 number 
 console.log(`Copy the token and paste it down below in the console.`);
 console.log(`-----`);
     
-// Function to get token input and attempt login again
+// Duplicate of the bottom code but for retrying
 function getTokenAndLoginAgain() {
     tokenInterface.question('Please enter your valid Discord bot token: ', (input_token) => {
         console.clear();
