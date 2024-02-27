@@ -32,13 +32,13 @@ jobs:
 
     - name: Zip changed files
       run: |
-        zip -r update-v${{ env.VERSION }}.zip index.js package.json package-lock.json
+        zip -r BadgeGiver-v${{ env.VERSION }}.zip index.js package.json package-lock.json
     
     - name: Get commit message
       id: get_commit_message
       run: |
-        COMMIT_MSG=$(git show -s --format=%B ${{ github.sha }})
-        echo "COMMIT_MSG=$COMMIT_MSG" >> $GITHUB_ENV
+        COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.sha }})
+        echo "COMMIT_MSG=\"$COMMIT_MSG\"" >> $GITHUB_ENV
       
     - name: Release
       uses: softprops/action-gh-release@v0.1.15
@@ -46,7 +46,7 @@ jobs:
         files: |
           BadgeGiver-v${{ env.VERSION }}.zip
         tag_name: v${{ env.VERSION }}
-        name: Update v${{ env.VERSION }}
+        name: "Update v${{ env.VERSION }}"
         body: ${{ env.COMMIT_MSG }}
         token: ${{ secrets.GITHUB_TOKEN }}
     
