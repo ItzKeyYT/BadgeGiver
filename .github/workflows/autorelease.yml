@@ -37,7 +37,7 @@ jobs:
     - name: Get commit message
       id: get_commit_message
       run: |
-        COMMIT_MSG=$(git log --format=%b -n 1 ${{ github.sha }} | sed ':a;N;$!ba;s/\n/ /g')
+        COMMIT_MSG=$(git log --format=%b -n 1 ${{ github.sha }} | sed ':a;N;$!ba;s/\n/\ /g')
         echo "COMMIT_MSG=\"$COMMIT_MSG\"" >> $GITHUB_ENV
       
     - name: Release
