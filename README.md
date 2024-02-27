@@ -26,7 +26,7 @@ To start using BadgeGiver and obtain the Active Developer Badge on Discord, foll
 
 5. **[Windows Only] Run the script:** Open the folder where the files has been extracted, click "start_windows.bat".
 
-5.1. **[Linux & Mac] Run the script:** Open the folder where the files has been extracted, click "start_linux.sh".
+5.1. **[Linux & Mac Only] Run the script:** Open the folder where the files has been extracted, click "start_linux.sh".
 
 6. **Follow the instructions:** Soon after running the script, it'll install required packages and run the script itself. Now follow the console's instructions.
 
