@@ -206,6 +206,14 @@ setTimeout(() => {
 
             console.log(`${client.user.tag} is logged in using user's input token that was provided and it's ready to be used!`);
 
+            // Set activity status
+            client.user.setActivity({
+                name: `the user getting their badge | /get-badge`,
+                type: ActivityType.Watching
+            });
+
+            client.user.setStatus('idle');
+
             const clientId = client.user.id;
 
             // Tips for copying a bot application id

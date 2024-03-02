@@ -1,7 +1,7 @@
 {
   "WARNING": "Do not change any values in this file, especially the version number as that will mess up detecting updates.",
   "name": "badgegiver",
-  "version": "1.2.5.13",
+  "version": "1.2.5.14",
   "description": "A way to claim the Active Developer badge on Discord without coding",
   "main": "index.js",
   "scripts": {
