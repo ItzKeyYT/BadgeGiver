@@ -20,8 +20,9 @@ minor=$(echo $node_version | cut -d'.' -f2)
 patch=$(echo $node_version | cut -d'.' -f3)
 
 # Compare Node.js version with minimum required version
-if [ $major -lt 16 ] || ([ $major -eq 16 ] && [ $minor -lt 11 ]); then
-    echo "⚠ Node.js version is lower than v16.11.0."
+# && [ $minor -lt 0 ]
+if [ $major -lt 18 ] || ([ $major -eq 18 ]); then
+    echo "⚠ Node.js version is lower than v18.0.0."
     echo "Please upgrade Node.js to run this script."
     echo "https://nodejs.org/en/download"
     echo

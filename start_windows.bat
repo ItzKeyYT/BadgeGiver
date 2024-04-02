@@ -21,26 +21,35 @@ for /f "tokens=1,2,3 delims=." %%a in ('node -v') do (
 )
 
 rem Compare Node.js version with minimum required version
-if %major% lss 16 (
-    echo Node.js version is lower than v16.11.0.
+if %major% lss 18 (
+    echo Node.js version is lower than v18.0.0.
     echo Please upgrade Node.js to run this script.
     echo https://nodejs.org/en/download
     echo. 
     echo Warning: You must not mess around with any options other than 'Online documentation sAhortcuts'.
     pause
     exit /b
-) else if %major% equ 16 (
-    if %minor% lss 11 (
-        echo Node.js version is lower than v16.11.0.
-        echo Please upgrade Node.js to run this script.
-        echo https://nodejs.org/en/download
-        echo. 
-        echo Warning: You must not mess around with any options other than 'Online documentation shortcuts'.
-        pause
-        exit /b
-    )
-) else (
-    rem Node.js version is equal to or higher than v16.11.0
-    npm i
-    node index.js
+)
+
+//
+rem else if %major% equ 18 (
+    rem if %minor% lss 1 (
+        rem echo Node.js version is lower than v18.1.0.
+        rem echo Please upgrade Node.js to run this script.
+        rem echo https://nodejs.org/en/download
+        rem echo. 
+        rem echo Warning: You must not mess around with any options other than 'Online documentation shortcuts'.
+        rem pause
+        rem exit /b
+    rem )
+rem )
+
+rem Node.js version is equal to or higher than v16.11.0
+node index.js
+
+rem Check if node command executed successfully
+if %errorlevel% neq 0 (
+    echo Error: Failed to execute 'node index.js'.
+    echo Please check your Node.js installation and ensure 'index.js' is present.
+    pause
 )

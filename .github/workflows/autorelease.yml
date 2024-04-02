@@ -5,7 +5,6 @@ on:
     paths:
       - 'index.js'
       - 'package.json'
-      - 'package-lock.json'
 
 jobs:
   build:
