@@ -47,9 +47,9 @@ To start using BadgeGiver and obtain the Active Developer Badge on Discord, foll
 
 ## Support
 
-If you encounter any issues or have questions about using BadgeGiver, feel free to report the issue to us on GitHub or contact us at [support@itzkeyyt.us.to](mailto:support@itzkeyyt.us.to).
+If you encounter any issues or have questions about using BadgeGiver, feel free to report the issue on GitHub by clicking [here](https://github.com/ItzKeyYT/BadgeGiver/issues/new?assignees=ItzKeyHeyHeymanCode&labels=bug&projects=&template=bug_report.md&title=%5BBUG%5D) or send an email to [support@itzkeyyt.us.to](mailto:support@itzkeyyt.us.to).
 
 ## License
 
-BadgeGiver is not affiliated with [Discord](https://discord.com) or its parent company. This project is provided as-is without any warranties. Use at your own discretion.
+BadgeGiver is not affiliated with [Discord](https://discord.com). This project is licensed under the [MIT License](https://opensource.org/license/MIT).
 

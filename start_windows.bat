@@ -1,5 +1,5 @@
 @echo off
-title "BadgeGiver"
+title BadgeGiver
 
 rem Check if Node.js is installed
 node -v >nul 2>&1
@@ -31,7 +31,7 @@ if %major% lss 18 (
     exit /b
 )
 
-//
+@REM These code is for debugging, please DON'T modify anything!
 rem else if %major% equ 18 (
     rem if %minor% lss 1 (
         rem echo Node.js version is lower than v18.1.0.
@@ -44,12 +44,12 @@ rem else if %major% equ 18 (
     rem )
 rem )
 
-rem Node.js version is equal to or higher than v16.11.0
+rem Node.js version is equal to or higher than v18.0.0
 node index.js
 
 rem Check if node command executed successfully
 if %errorlevel% neq 0 (
     echo Error: Failed to execute 'node index.js'.
-    echo Please check your Node.js installation and ensure 'index.js' is present.
+    echo Please verify your Node.js installation. If you encounter any errors, report the issue on GitHub or email to (support@itzkeyyt.us.to).
     pause
 )

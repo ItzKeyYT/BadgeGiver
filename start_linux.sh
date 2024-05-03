@@ -30,7 +30,7 @@ if [ $major -lt 18 ] || ([ $major -eq 18 ]); then
     read -p "Press Enter to continue..."
     exit 1
 else
-    # Node.js version is equal to or higher than v16.11.0
+    # Node.js version is equal to or higher than v18.0.0
     npm i
     node index.js
 fi

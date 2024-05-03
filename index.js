@@ -1,5 +1,5 @@
 // Require everything that the whole bot needs
-const { Client, IntentsBitField } = require('discord.js');
+const { Client, IntentsBitField, ActivityType } = require('discord.js');
 const readline = require('readline');
 const fs = require('fs');
 
@@ -71,7 +71,7 @@ async function checkForUpdate() {
         } else if (comparisonResult === 0) {
             console.log("You're using the latest version.");
         } else {
-            console.log('Your version is ahead of the latest version on GitHub');
+            console.log("! | Please revert to the original version and refrain from making modifications.");
         };
 
     } catch (error) {
@@ -235,7 +235,8 @@ setTimeout(() => {
     
         try {
             if (commandName === 'get-badge') {
-                await interaction.reply('**☑ | You should now be able to get the Active Developer Badge!\nIf you need help, please look at this article by Discord:\nhttps://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge**');
+                await interaction.reply('**:white_check_mark: | You should now be able to get the Active Developer Badge!\nIf you need help, please look at this article by Discord:\nhttps://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge**');
+                console.log(`${interaction.user.tag} has run the "/get-badge" command, you can safely close this window!`);
             };
         } catch (error) {
             console.log('An error occurred:', error);

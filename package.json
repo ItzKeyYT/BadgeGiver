@@ -1,14 +1,14 @@
 {
   "WARNING": "Do not change any values in this file, especially the version number as that will mess up detecting updates.",
   "name": "badgegiver",
-  "version": "1.2.5.15",
+  "version": "1.2.5.16",
   "description": "A way to claim the Active Developer badge on Discord without coding",
   "main": "index.js",
   "scripts": {
     "bot": "node ."
   },
   "author": "ItzKeyCode",
-  "license": "ISC",
+  "license": "MIT",
   "keywords": [
     "Active Developer Badge",
     "Claim Active Developer Badge",
