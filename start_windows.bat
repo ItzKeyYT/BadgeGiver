@@ -45,6 +45,7 @@ rem else if %major% equ 18 (
 rem )
 
 rem Node.js version is equal to or higher than v18.0.0
+npm i
 node index.js
 
 rem Check if node command executed successfully

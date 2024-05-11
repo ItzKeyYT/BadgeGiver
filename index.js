@@ -176,6 +176,8 @@ setTimeout(() => {
                 const commandsToDeploy = [
                     { name: 'get-badge', description: 'Get the Active Developer Badge with a simple slash command!' },
                     { name: 'status', description: 'Show status of the bot.' },
+                    { name: 'help-badge', description: 'Get help with the badge.' },
+                    { name: 'badge-help', description: 'Get help with the badge.' },
                 ];
 
                 // Log all of the existing slash commands
@@ -218,7 +220,7 @@ setTimeout(() => {
 
             // Tips for copying a bot application id
             console.log(`------`);
-            console.log("Paste this link down below in your browser to invite your bot to your server:");
+            console.log("Paste this link below into your browser to invite your bot to your server:");
             console.log(`https://discord.com/oauth2/authorize?client_id=${clientId}&scope=bot&permissions=applications.commands`);
             console.log(`-----`);
             console.log('After inviting the bot to your server, type "/get-badge" to finally get your badge!');
@@ -235,8 +237,8 @@ setTimeout(() => {
     
         try {
             if (commandName === 'get-badge') {
-                await interaction.reply('**:white_check_mark: | You should now be able to get the Active Developer Badge!\nIf you need help, please look at this article by Discord:\nhttps://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge**');
-                console.log(`${interaction.user.tag} has run the "/get-badge" command, you can safely close this window!`);
+                await interaction.reply('**:white_check_mark: | You should now be able to get the Active Developer Badge!\n**');
+                console.log(`${interaction.user.tag} had run the "/get-badge" command, you can safely close this window!`);
             };
         } catch (error) {
             console.log('An error occurred:', error);
@@ -244,18 +246,29 @@ setTimeout(() => {
         };
 
         try {
-            if (commandName === 'status') {
-                const apiPing = client.ws.ping;
-                const botPing = Date.now() - interaction.createdTimestamp;
+            if (commandName === 'help-badge' || commandName === 'badge-help') {
+                await interaction.reply('**Please look at the article by Discord for more information:\nhttps://support-dev.discord.com/hc/en-us/articles/10113997751447-Active-Developer-Badge**');
+            };
+        } catch (error) {
+            console.log('An error occurred:', error);
+            await interaction.reply({ content: `**An error occurred while processing your command: \n**${error.message}`, ephemeral: true });
+        };
 
-                const days = Math.floor(client.uptime / 86400000);
-                const hours = Math.floor(client.uptime / 3600000) % 24;
-                const minutes = Math.floor(client.uptime / 60000) % 60;
-                const seconds = Math.floor(client.uptime / 1000) % 60;
+        // DO NOT modify anything below this line! This is only for debugging purposes.
+        try {
+            if (commandName === 'status') {
+        //         const apiPing = client.ws.ping;
+        //         const botPing = Date.now() - interaction.createdTimestamp;
+
+        //         const days = Math.floor(client.uptime / 86400000);
+        //         const hours = Math.floor(client.uptime / 3600000) % 24;
+        //         const minutes = Math.floor(client.uptime / 60000) % 60;
+        //         const seconds = Math.floor(client.uptime / 1000) % 60;
     
-                const uptimeFormatted = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+        //         const uptimeFormatted = `${days}d ${hours}h ${minutes}m ${seconds}s`;
             
-                await interaction.reply(`**🏓 | Pong! Here's the bot status:\n\n📡 | API Ping: ${apiPing}ms\n🏓 | Bot Ping: ${botPing}ms\n⏱️ | Uptime: ${uptimeFormatted}**`);
+        //         await interaction.reply(`**🏓 | Pong! Here's the bot status:\n\n📡 | API Ping: ${apiPing}ms\n🏓 | Bot Ping: ${botPing}ms\n⏱️ | Uptime: ${uptimeFormatted}**`);
+                await interaction.reply(`**We're fixing this command, please DON'T modify anything!**`);
             };
 
         } catch (error) {
