@@ -5,6 +5,8 @@ on:
     paths:
       - 'index.js'
       - 'package.json'
+      - 'start_windows.bat'
+      - 'start_linux.sh'
 
 jobs:
   build:
@@ -31,7 +33,7 @@ jobs:
 
     - name: Zip changed files
       run: |
-        zip -r BadgeGiver-v${{ env.VERSION }}.zip index.js package.json package-lock.json
+        zip -r BadgeGiver-v${{ env.VERSION }}.zip index.js package.json start_windows.bat start_linux.sh
     
     - name: Get commit message
       id: get_commit_message
