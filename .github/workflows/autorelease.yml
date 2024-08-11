@@ -3,7 +3,7 @@ name: Auto Release on File Changes
 on:
   push:
     paths:
-      - 'index.js'
+      - 'Bot'
       - 'package.json'
       - 'start_windows.bat'
       - 'start_linux.sh'
