@@ -1,3 +1,5 @@
-.env
-package-lock.json
+Bot/.env
+Archive
 node_modules
+package-lock.json
+Logs
