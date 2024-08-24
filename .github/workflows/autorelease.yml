@@ -26,19 +26,18 @@ jobs:
         version=$(node -p "require('./package.json').version")
         echo "VERSION=$version" >> $GITHUB_ENV
 
-
     # Print the value of VERSION for debugging
     - name: Print VERSION
       run: echo "VERSION=${{ env.VERSION }}"
 
     - name: Zip changed files
       run: |
-        zip -r BadgeGiver-v${{ env.VERSION }}.zip index.js package.json start_windows.bat start_linux.sh
+        zip -r BadgeGiver-v${{ env.VERSION }}.zip Bot package.json start_windows.bat start_linux.sh
     
     - name: Get commit message
       id: get_commit_message
       run: |
-        COMMIT_MSG=$(git log --format=%b -n 1 ${{ github.sha }} | sed ':a;N;$!ba;s/\n/\ /g')
+        COMMIT_MSG=$(git log --format=%B -n 1 ${{ github.sha }})
         echo "COMMIT_MSG=\"$COMMIT_MSG\"" >> $GITHUB_ENV
       
     - name: Release
