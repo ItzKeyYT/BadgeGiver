@@ -120,7 +120,7 @@ async function loginWithToken(token, tokenInterface, shouldPromptSave) {
         console.log('After inviting the bot to your server, type "/get-badge" to finally get your badge!');
         console.log('Thank you for using the bot!');
         console.log(`\n-----`);
-        console.log(`WARNING: Do not close the window before you run the "/badge give" command!\n`);
+        console.warn(`WARNING: Do not close the window before you run the "/badge give" command!\n`);
     } catch (error) {
         tokenInterface.close();
         if (error.code && error.code === 'TokenInvalid') {

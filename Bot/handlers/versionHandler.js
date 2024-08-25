@@ -47,7 +47,7 @@ async function checkForUpdate() {
         const { default: fetch } = await import('node-fetch');
         const response = await fetch(`https://api.github.com/repos/ItzKeyYT/BadgeGiver/releases/latest`);
         if (!response.ok) {
-            throw new Error('An error occurred while fetching the latest version info.');
+            throw new Error('An error occurred while fetching the latest version info. Please check https://api.github.com/repos/ItzKeyYT/BadgeGiver/releases/latest for info');
         };
         
         const data = await response.json();

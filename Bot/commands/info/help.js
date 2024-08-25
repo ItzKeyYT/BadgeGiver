@@ -6,40 +6,59 @@ module.exports = {
         description: 'Help for all available commands',
     },
     run: async ({ interaction, client, handler }) => {
-        const commands = client.commands; // Fetch commands from the client
+        try {
+            const commands = await client.application.commands.fetch(); // Fetch commands from the client
+    
+            if (!commands || commands.size === 0) {
+                await interaction.reply({
+                    content: 'No commands have been found, please send a email to [ItzKeyYT](mailto:contact@zubb.key.name.my) for reporting this issue.',
+                    ephemeral: true,
+                });
+                return; // Exit the function to avoid running the rest of the code
+            }
+    
+            const embed = new EmbedBuilder()
+                .setTitle('Available Commands')
+                .setDescription('Here are the available commands:')
+                .setColor('#0099ff') // You can choose a color
+                .setTimestamp()
+                .setFooter({ text: `Requested by ` + interaction.user.username, iconURL: interaction.user.displayAvatarURL() })
+    
+            commands.sort((a, b) => a.name.localeCompare(b.name));
 
-        console.log(client.commands); // Log the commands to see if they are loaded
-
-        if (!commands || commands.size === 0) {
+            commands.forEach((command) => {
+                if (command.options && command.options.length > 0) {
+                    const subcommands = command.options.filter(option => option.type === 1);
+                    subcommands.sort((a, b) => a.name.localeCompare(b.name));
+            
+                    subcommands.forEach((subcommand) => {
+                        embed.addFields({
+                            name: `/${command.name} ${subcommand.name}`,
+                            value: subcommand.description || 'No description available.',
+                            inline: true,
+                        });
+                    });
+                } else {
+                    embed.addFields({
+                        name: `/${command.name}`,
+                        value: command.description || 'No description available.',
+                        inline: true,
+                    });
+                }
+            });
+                
+                
+    
+            // Send the help embed
             await interaction.reply({
-                content: 'No commands have been found, do you want an apple?',
+                embeds: [embed],
                 ephemeral: true,
             });
-            return; // Exit the function to avoid running the rest of the code
+        } catch (err) {
+            console.log(`An error occurred while trying to fetch slash commands using the help command:\n`, err);
         }
-
-        const embed = new EmbedBuilder()
-            .setTitle('Available Commands')
-            .setDescription('Here are the available commands:')
-            .setColor('#0099ff') // You can choose a color
-            .setTimestamp()
-            .setFooter({ text: 'Use /[command] for more details' });
-
-        commands.forEach(command => {
-            embed.addFields({
-                name: `/${command.data.name}`, // Use command.data.name to access the command name
-                value: command.data.description || 'No description available.', // Same for description
-                inline: true, // Set to true if you want fields to be in a row, or false for a column layout
-            });
-        });
-
-        // Send the help embed
-        await interaction.reply({
-            embeds: [embed],
-            ephemeral: true,
-        });
     },
     options: {
-        deleted: true,
+        // deleted: true,
     }
 };

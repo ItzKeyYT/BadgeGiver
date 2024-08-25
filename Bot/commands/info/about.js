@@ -3,31 +3,36 @@ const { EmbedBuilder } = require('discord.js');
 module.exports = {
     data: {
         name: 'about',
-        description: 'Information about the bot/project.',
+        description: 'Information about the project.',
     },
     run: async ({ interaction, client, handler }) => {
 
+        const version = "v2.0.4" // Change this before update
+
         const embed = new EmbedBuilder()
             .setTitle('About')
-            .setDescription('This bot was created by [ItzKeyYT](https://github.com/ItzKeyYT) and is open-source and available on [GitHub](https://github.com/ItzKeyYT/BadgeGiver).')
+            .setDescription('This project is created by [ItzKeyYT](<https://github.com/ItzKeyYT>) and is open-source and available on [GitHub](<https://github.com/ItzKeyYT/BadgeGiver>).\nThe sole reason of creating this project is to help people obtain the Active Developer Badge without any coding skills.')
             .addFields(
                 [
                     {
                         name: `Name`,
-                        value: 'Badge Giver - New Edition',
+                        value: `[Badge Giver](<https://github.com/ItzKeyYT/BadgeGiver>)`,
                     },
                     {
-                        name: 'Version',
-                        value: '2.0.0',
+                        name: `Version`,
+                        value: `[${version}](<https://github.com/ItzKeyYT/BadgeGiver/releases/tag/${version}>)`,
                         inline: true,
                     },
                     {
-                        name: 'Author',
-                        value: 'ItzKeyYT',
+                        name: `Author`,
+                        value: `[ItzKeyYT](<https://github.com/ItzKeyYT>)`,
                         inline: true,
                     },
                 ],
             )
-            .setFooter({ name: `Requested by ` + interaction.user.author, iconURL: interaction.user.displayAvatarURL() })
+            .setFooter({ text: `Requested by ` + interaction.user.username, iconURL: interaction.user.displayAvatarURL() })
+            .setTimestamp();
+
+        interaction.reply({ embeds: [embed] });
     }
 }
