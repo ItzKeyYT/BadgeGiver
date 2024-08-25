@@ -1,6 +1,6 @@
 {
   "name": "badgegiver",
-  "version": "2.0.4",
+  "version": "2.1.0.1",
   "description": "A project that can effortlessly obtain the Active Developer Badge on Discord using JavaScript, simplifying the process without requiring any coding expertise.",
   "main": "Bot/index.js",
   "scripts": {
