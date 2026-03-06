@@ -1,3 +1,8 @@
+# ⚠️ | Repository is Archived and read-only
+Due to Discord **discontinuing** the Active Developer Badge around in December 5-6, 2025, **this project is also discontinued**. Thank you everyone who uses this project before getting discontinued.
+
+---
+
 # Badge Giver
 
 Badge Giver is a personal project and a simple tool managed by [Key](https://github.com/ykitzkey). It is designed to help Discord users obtain the Active Developer Badge without the need for coding or technical knowledge. This project uses JavaScript and aims to provide an easy and accessible way for users to acquire the Active Developer Badge within the Discord platform.
